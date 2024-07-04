@@ -14,7 +14,7 @@
 
 ## REST API Endpoints
 
-- POST `/api/customers` to add a customer
+- POST `/api/customers/save` to add a customer
 - GET `/api/customers/{customerRef}` to retrieve customer by reference
 
 ## TDD Approach
