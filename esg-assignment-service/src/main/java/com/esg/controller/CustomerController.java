@@ -43,7 +43,9 @@ public class CustomerController {
                throw new ApiException(String.format("CustomerRef: %s, not found", customerRef), HttpStatus.NOT_FOUND.value());
            }
            return ResponseEntity.of(customer);
-       }catch (Exception exception){
+       }catch (ApiException apiException){
+           throw new ApiException(String.format("CustomerRef: %s, not found", customerRef), HttpStatus.NOT_FOUND.value());
+       } catch (Exception exception){
            throw new ApiException("Error Occurred While retrieving customerRef", HttpStatus.INTERNAL_SERVER_ERROR.value());
        }
     }
